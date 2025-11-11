@@ -66,6 +66,7 @@ public class SCORMManager : MonoBehaviour
     public void RequestStudentInfo()
     {
         Application.ExternalEval("parent.postMessage('requestStudentInfo', '*');");
+        Debug.Log("Requesting student info");
     }
 
     // ---------- LMS → Unity communication (receiving info) ----------
@@ -84,6 +85,7 @@ public class SCORMManager : MonoBehaviour
         {
             studentInfoText.text = $"Learner Name: {StudentName}\nLearner ID: {StudentId}";
         }
+        Debug.Log("Received student info");
     }
     // ---------- New: Progress Reporting ----------
 
